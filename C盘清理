@@ -1,0 +1,5 @@
+使用 dism 命令行，可以轻松的清理 Winsxs 文件夹
+打开 管理员权限的 命令行或者 Powershell，然后输入下面的命令
+Dism /online /Cleanup-Image /StartComponentCleanup
+等显示操作成功完成
+如果想知道自己清理完之后到底有多大，可以使用下面的命令：Dism /Online /Cleanup-Image /AnalyzeComponentStore
