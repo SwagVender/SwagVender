@@ -8,7 +8,9 @@ prepend-rules:
       - DOMAIN-SUFFIX,lnkd.in,Proxy
       - DOMAIN-SUFFIX,edgeoptic.com,Proxy
       - DOMAIN-SUFFIX,skk.moe,Proxy
-      - DOMAIN-SUFFIX,techstandardsolutions.com,Proxy
+      - DOMAIN-SUFFIX,genius.com,Proxy
+      - DOMAIN-SUFFIX,flexoptix.net,Proxy
+      - DOMAIN-SUFFIX,openwrt.org,Proxy
 
 
 prepend-proxies: []
