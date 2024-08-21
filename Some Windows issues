@@ -1,0 +1,45 @@
+##C盘清理
+使用 dism 命令行，可以轻松的清理 Winsxs 文件夹
+打开 管理员权限的 命令行或者 Powershell，然后输入下面的命令
+Dism /online /Cleanup-Image /StartComponentCleanup
+等显示操作成功完成
+如果想知道自己清理完之后到底有多大，可以使用下面的命令：Dism /Online /Cleanup-Image /AnalyzeComponentStore
+
+##共享打印机问题
+https://2345dn.com/0x00000709.html
+Pt1.修复打印机与清除打印队列.bat
+@echo off
+title 快速清除打印队列
+echo.
+echo 停止打印机服务
+net stop spooler
+echo.
+del /F/Q "%windir%\System32\spool\PRINTERS\*.*"
+echo 清除打印队列
+echo.
+net start spooler
+echo 启动打印机服务完毕
+pause
+
+Pt.
+管理员模式允许CMD
+启动Print Spooler服务： net start Spooler
+
+services.msc
+regedit
+
+1.	在运行对话框输入 【regedit】命令，点击确定进入注册表界面，进入注册表定位到HKEY_LOCAL_MACHINE\System\CurrentControlset\Services\Spooler
+项下 ，在Spooler项右方新建字符串值，命名为 ImagePath ，
+双击打开该值，将数据设置为 c:\windows\system32\spoolsv.exe 设置完成，
+返回服务项界面，找到print spooler服务，右键点击选择启动不好使。
+之后更改了DependOnService 的数值数据为RPCSS
+
+2.	开始→运行→输入：services.msc 点击确定（或按回车键）打开服务。
+依次找到print spooler服务→属性。
+打印服务→属性→常规→启动类型→自动→启动→确定。
+
+解决办法：在“服务”里找到“Print spooler”，点击右键选属性，启动方式选为“自动”，
+（1）删除 C:\WINDOWS\system32\spool\PRINTERS目录下的所有文件。
+（2）运行“regedit“进入注册表，删除HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Print\Printers目录下的所有打印机。 
+（3）重启电脑。
+（4）重新添加所需要的打印机。
