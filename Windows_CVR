@@ -1,18 +1,3 @@
-# Profile Enhancement Merge Template for Clash Verge
-
-prepend-rules: 
-      - DOMAIN-SUFFIX,chatgpt.com,Proxy
-      - DOMAIN-SUFFIX,linkedin.com,Proxy
-      - DOMAIN-SUFFIX,linkedin.cn,Proxy
-      - DOMAIN-SUFFIX,licdn.com,Proxy
-      - DOMAIN-SUFFIX,lnkd.in,Proxy
-      - DOMAIN-SUFFIX,edgeoptic.com,Proxy
-      - DOMAIN-SUFFIX,skk.moe,Proxy
-      - DOMAIN-SUFFIX,genius.com,Proxy
-      - DOMAIN-SUFFIX,flexoptix.net,Proxy
-      - DOMAIN-SUFFIX,openwrt.org,Proxy
-
-
 Script配置
 // 国内DNS服务器
 const domesticNameservers = [
