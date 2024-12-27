@@ -1,0 +1,9 @@
+把所有 Apple 相关的都 DIRECT 可解，具体来说是有一个监测区域的服务，但我不确定是哪个了
+
+RULE-SET, SYSTEM, DIRECT
+RULE-SET, https://raw.githubusercontent.com/Hackl0us/SS-Rule-Snippet/main/Rulesets/Surge/Basic/Apple-direct.list, DIRECT
+IP-ASN, 714, DIRECT
+
+不显示高德地图是因为显示的是苹果地图，人在国外的时候也是这样
+
+RULE-SET, SYSTEM, DIRECT
